@@ -34,10 +34,8 @@ public class TestVagalume {
             .body()
             .statusCode(200);
     }
-    
 
-
-
+   
     //@Test 
     public void dadoVagalumeAPI_QuandoRealizarGetMusicaELimit_entaoDeveRetornarStatusCode200(){
         given()
@@ -52,5 +50,16 @@ public class TestVagalume {
             .body()
             .statusCode(200);
     }
-    
+    @Test 
+    public void dadoVagalumeAPI_QuandoRealizarGetNoticia_entaoDeveRetornarStatusCode200(){
+        given()
+            .log()
+            .all()
+        .when()
+            .get(urlBase+"/news/index.js")
+        .then()
+            .log()
+            .body()
+            .statusCode(200);
+    }
 }
